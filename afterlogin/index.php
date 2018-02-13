@@ -1,0 +1,261 @@
+<?PHP
+
+session_start();
+
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+
+header ("Location:../../fbtest.html");
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Codestorm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Modak&effect=fire-animation">  
+      <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Rancho&effect=3d"> 
+      <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">  
+     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">  
+     <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+</head>
+<body background="d3.jpg">
+
+
+  
+<!--
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#myModal4').modal('show');
+    });
+</script>
+<div class="modal fade" id="myModal4">
+<div class="modal-dialog modal-md modal-sm modal-lg moodal-xs" style="background-color:white;">
+  <div class="modal-header" >
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="body" style="background-color:white;">
+    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
+      Log in with facebook
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+</div>-->
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div id="bc" class="container">
+  <div class="row">
+  <div class="col-md-3 ">
+    <img src="vm2.png" height="63px" width="107px">
+
+  </div>
+        <div class="col-md-9">
+        
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand font-effect-3d" href="#">CodeStorm</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li  class=""><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+      
+        <li><a href="ad/index-Ad.php">Sell/Buy/Post</a></li>
+        <li><a href="quora.php">Quora</a></li>
+        <li><a href="quiz.php">Quiz</a></li>
+        <li><a href="cart/index.php">Online material</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+      <li><a href="" data-toggle="modal" data-target="#sugmodal"><span class="glyphicon glyphicon-edit" ></span> Suggestions</a></li>
+        <li><a href="contact.php"><span class="glyphicon glyphicon-phone-alt"></span> Contact Us</a></li>
+      <li><img src="user.png"  class="img-circle" alt="" width="50" height="50" /></li>
+       
+      <li style="color:red;"><?php echo $_SESSION['login'];?></li>
+      <li>
+      <a href="logout.php">Log Out
+    </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container" id="bd">
+<div class="col-sm-1 col-md-4 col-lg-2" id="bd2">
+<nav class="w3-sidenav" id="mySidenav">
+ <div class="w3-container">
+  <h4>HTML and CSS</h4>
+ </div>
+  <h4>HTML</h4>
+ 
+ <a href="compiler.php?filename=side_bar\html_table.txt">How to Create tables?</a>
+  <a href="compiler.php?filename=side_bar\img.txt">How to insert images?</a>
+ <a href="compiler.php?filename=side_bar\html_form.txt">How to design a form?</a>
+ <a href="compiler.php?filename=side_bar\html_frame.txt">How to divide page into frames?</a>
+ <a href="compiler.php?filename=side_bar\html_list.txt">How to create list?</a>
+ <a href="compiler.php?filename=side_bar\html_audio.txt">How to include audio file?</a>
+ <a href="compiler.php?filename=side_bar\html_video.txt">How to include video file?</a>
+ <a href="compiler.php?filename=side_bar\html_class.txt">How to create classes ?</a>
+ <a href="compiler.php?filename=side_bar\css in html.txt">How to add css code?</a>
+ <a href="compiler.php?filename=side_bar\html_js.txt">How to add javascript code?</a>
+ <div class="w3-container">
+  <h4>CSS</h4>
+ </div>
+ <a href="compiler.php?filename=side_bar\css_bckgrnd.txt">How to add background?</a>
+ <a href="compiler.php?filename=side_bar\css_acc.txt">How to add accordian?</a>
+ <a href="compiler.php?filename=side_bar\css_animation.txt">How to animate a button?</a>
+ <a href="compiler.php?filename=side_bar\css_tab_highlight.txt">How to create highlighted tab?</a>
+ <a href="compiler.php?filename=side_bar\css_close_tab.txt">How to add tab that can also be closed?</a>
+ <a href="compiler.php?filename=side_bar\css_menu_icon.txt">How to interactive menu icon?</a>
+ <a href="compiler.php?filename=side_bar\css_nav.txt">How to create a navigation bar?</a>
+ <a href="compiler.php?filename=side_bar\css_pagi.txt">How to insert pagination?</a>
+ <a href="compiler.php?filename=side_bar\css_search.txt">How to create responsive search column?</a>
+ <a href="compiler.php?filename=side_bar\css_toggle_switch.txt">How to create toggle switch?</a>
+ <a href="compiler.php?filename=side_bar\css_login.txt">Complete Login page?</a>
+ 
+ <div class="w3-container">
+  <h4>JavaScript</h4>
+ </div>
+ <a href="#" color="white">How to add validation</a>
+ <a href="#">Slider</a>
+ <a href="#">Image Slider</a>
+ <div class="w3-container">
+  <h4>PHP</h4>
+ </div>
+ <a href="#">How to connect with DataBase</a>
+ <a href="#">How to fetch Data from DB</a>
+ <a href="#">How to add session</a>
+ <a href="#">How to fetch Profile image</a>
+ </nav>
+</div>
+</div>
+
+
+
+<div class="container">
+        
+      <div class="main">
+        <ul id="cbp-bislideshow" class="cbp-bislideshow">
+          <li><img src="images/11.jpg" alt="image01"/></li>
+          <li><img src="images/19.jpg" alt="image02"/></li>
+          <li><img src="images/13.jpg" alt="image03"/></li>
+          <li><img src="images/14.jpg" alt="image04"/></li>
+          <li><img src="images/15.jpg" alt="image05"/></li>
+          <li><img src="images/16.jpg" alt="image06"/></li>
+        </ul>
+        <div id="cbp-bicontrols" class="cbp-bicontrols">
+          <span class="cbp-biprev"></span>
+          <span class="cbp-bipause"></span>
+          <span class="cbp-binext"></span>
+        </div>
+      </div>
+    </div>
+
+<div class="sidesection" id="right" style="margin-top: 125px;"><h2></h2>
+<div class="col-xs-3 col-xs-offset-8">
+
+<div class="fb-like" data-href="http://localhost/project%20m/index.php" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div></div>
+<!--modal begins here-->
+<div class="modal fade modal" id="sugmodal" role="dialog">
+<div class="modal-dialog modal-md modal-sm modal-lg moodal-xs">
+<!-- Modal content-->
+<div class="modal-content">
+<!--modal header-->
+<div class="modal-header" style="padding:25px 25px;">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Give Your Suggestion!!</h4>
+</div>
+<!--modal header ends-->
+<!--modal body starts-->
+<div class="modal-body" style="padding:40px 50px;">
+<form role="form" method="post" action="suggestion.php" enctype="multipart/form-data">
+<!--name-->
+<div class="form-group" align="left">
+<label for="name">
+    <span class="glyphicon glyphicon-user"></span>
+    Your Name
+</label>
+<input type="text" class="form-control" name="yname" id="name" placeholder="Enter your name" required="required">
+</div>
+<!--suggestion-->
+<div class="form-group" align="left">
+<label for="suggest"><span class="glyphicon glyphicon-comment"></span>
+&nbsp;Suggestion
+</label>
+<textarea class="form-control" name="suggestion" rows="6" id="suggest" placeholder="Max length 500 characters" required="required" ></textarea>
+</div>
+<!--contact-->
+<div class="form-group" align="left">
+<label for="conta">
+<span class="glyphicon glyphicon-phone"></span>
+Your Contact
+</label>
+<input type="text" class="form-control" name="contact" id="conta" placeholder="Enter your contact/FB profile link/Email" required="required">
+</div>
+<div class="modal-footer">
+<button type="submit" name="adsug" onclick="call();" class="btn btn-success btn-default pull-right">
+<span class="glyphicon glyphicon-flag"></span>
+Submit
+</button>
+<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+<span class="glyphicon glyphicon-remove"></span>
+Cancel
+</button>
+</form>
+</div>
+</div>
+<!--modal body ends-->
+</div>
+</div>
+<script>
+  function call(){
+    
+    alert('Thank you for your Suggestion!!');
+  }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- imagesLoaded jQuery plugin by @desandro : https://github.com/desandro/imagesloaded -->
+    <script src="js/jquery.imagesloaded.min.js"></script>
+    <script src="js/cbpBGSlideshow.min.js"></script>
+    <script>
+      $(function() {
+        cbpBGSlideshow.init();
+      });
+    </script> 
+</body>
+</html>

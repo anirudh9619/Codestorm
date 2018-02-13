@@ -1,0 +1,90 @@
+@media screen and (min-width: 1500px){
+* padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+ul li a 
+{
+    display: block;
+    white-space: nowrap;
+    color:#FDFFFF;
+}
+body{
+    
+	 
+    margin-top: px;
+}
+#bd{
+	margin-top: 78px;
+	margin-left: 0px;
+    
+
+}
+
+.navbar-inverse{
+
+	margin-top: 0px;
+}
+#custom-search-input{
+
+    margin-top: 10px;
+    
+}
+img{
+    float: left;
+    margin-left: 0px;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+#bd2{
+    font-color:white;
+    margin-left: 0px;
+    padding: 0px;
+}
+#bd{
+    font-color:white;
+    padding: 0px;
+}
+
+#mySidenav{
+    font-color:white;
+    font-family: 'Covered By Your Grace', cursive;
+  background-color:#222222; 
+  font-size: 20px; 
+  padding: 0px;
+   margin-top: 31.4px;
+}
+#mq{
+    font-size: 130px;
+    font-color:#222222;
+}
+
+
+    #mq2{
+        background-color: ;
+        margin-top: 90px;
+    }
+.w3-sidenav{
+    color:white;
+
+}
+.modal-body {
+   background-image: url(d3.jpg);
+}
+.fb-comments{
+    margin-right:0px;
+}
+.fb-page{
+margin-left: 280px;
+}
+.fb-like{
+    margin-right: 0px;
+}
+#fp{
+    margin-right: 50px;
+}
+}
+

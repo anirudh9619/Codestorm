@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Codestorm</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Rancho&effect=3d">
+  <link href="https://fonts.googleapis.com/css?family=Delius+Unicase|Playfair+Display" rel="stylesheet">
+</head>
+<body style="background-repeat:no-repeat;
+   background-size:cover;">
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = '*Please login ' +
+        'with Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '681900011984018',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+    FB.Event.subscribe('auth.login', function () {
+          window.location = "index.php";
+      });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    
+   window.location ="index.php";
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<div id="content">
+  <img src="images/user1.png">
+  <h3>Codestorm</h3>
+  <div id="login">
+  <form role="form" method="post" action="login4.php">
+  <span class="inputLogin">Email Id</span> : <input type="email" name="email" placeholder="Email-Id"><br>
+  <span class="inputLogin">Password</span> : <input type="password" name="password" placeholder="Password" required="required"><br>
+  <div class="btn"><div class="fb-login-button" data-max-rows="2" data-size="medium" data-show-faces="false" data-auto-logout-link="false">
+      Log in with facebook
+    </div>
+  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#sugmodal">Sign Up</button>
+  <button class="btn btn-md" type="submit" name='submit' value="Login">Login</button> &nbsp<br> 
+  </form>
+  </div>
+  
+<p style="color:red;text-align: center;">WRONG LOGIN OR PASSWORD!!</p>
+</div>
+</div>
+<div id="content2">
+<h2 class="font-effect-3d" style="text-align: center;color:#3a5ba0;">Why codestorm?</h2>
+<h4 style="font-family: 'Playfair Display', serif; margin-right: 10px; margin-left: 20px;">Codestorm’s mission is to share, learn and grow the knowledge. A vast amount of the knowledge that would be valuable to many people is currently only available to a few — either locked in people’s heads, or only accessible to select groups. We are providing you a platform for learning the code, a quora section for quenching your thirst, a post/sell/buy portion where you can post ad for selling something or post for your organisation, buy some study materials .No other platform provide you facility of buying the study materials. A protion wher you can learn code about any language, by the help of those codes you can design your projects!</br><a href="https://www.facebook.com/Codestorm-107099063094763/"><img src="iconfb.png" style="width:40px;height:40px;margin-left:650px;"></a></h4>
+<div>
+</div>
+
+
+<div class="modal fade modal" id="sugmodal" role="dialog">
+<div class="modal-dialog modal-md modal-sm modal-lg moodal-xs">
+<!-- Modal content-->
+<div class="modal-content">
+<!--modal header-->
+<div class="modal-header" style="padding:25px 25px;">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Sign Up!!</h4>
+</div>
+<!--modal header ends-->
+<!--modal body starts-->
+<div class="modal-body" style="padding:40px 50px;">
+<form role="form" method="post" action="connect.php" data-toggle="validator" enctype="multipart/form-data">
+<!--name-->
+<div class="form-group" align="left">
+<label for="name">
+    <span class="glyphicon glyphicon-user"></span>
+    Your Name
+</label>
+<input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required="required">
+</div>
+<!--suggestion-->
+<div class="form-group" align="left">
+<label for="suggest"><span class="glyphicon glyphicon-comment"></span>
+&nbsp;Email
+</label>
+<input type="text" class="form-control" name="email" id="inputEmail" placeholder="Enter your email" required="required">
+</div>
+<!--contact-->
+<div class="form-group" align="left">
+<label for="conta">
+<span class="glyphicon glyphicon-phone"></span>
+Your Contact
+</label>
+<input type="text" class="form-control" name="contact" id="conta" placeholder="Enter your contact/FB profile link" required="required">
+</div>
+<div class="form-group" align="left">
+    <label for="inputPassword" class="control-label">Password</label>
+    <div class="form-inline row">
+      <div class="form-group col-sm-6">
+        <input type="password" name="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required="required">
+        <div class="help-block">Minimum of 6 characters</div>
+      </div>
+      <div class="form-group col-sm-6">
+        <input type="confirm-password" name="confirm-password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+<div class="modal-footer">
+<button type="submit" name="adsug" class="btn btn-success btn-default pull-right">
+<span class="glyphicon glyphicon-flag"></span>
+Submit
+</button>
+<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+<span class="glyphicon glyphicon-remove"></span>
+Cancel
+</button>
+</form>
+</div>
+</div>
+<!--modal body ends-->
+</div>
+</div>
+
+
+
+</body>
+</html>

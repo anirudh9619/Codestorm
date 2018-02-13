@@ -1,0 +1,169 @@
+<?PHP
+
+session_start();
+
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+
+header ("Location:../fbtest.html");
+
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Modak&effect=fire-animation">  
+      <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Rancho&effect=3d"> 
+      <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">  
+     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">  
+     <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+</head>
+<body background="d3.jpg">
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div id="bc" class="container">
+  <div class="row">
+  <div class="col-md-3 ">
+    <img src="vm2.png" height="63px" width="107px">
+    
+  </div>
+        <div class="col-md-9">
+        
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand font-effect-3d" href="#">Codestorm</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li  class=""><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+        
+        <li><a href="ad/index-Ad.php">Sell/Buy/Post</a></li>
+        <li><a href="quora.php">Quora</a></li>
+        <li><a href="quiz.php">Quiz</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="" data-toggle="modal" data-target="#sugmodal"><span class="glyphicon glyphicon-edit"></span> Suggestions</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-phone-alt"></span> Contact Us</a></li>
+        <li><img src="user.png"  class="img-circle" alt="" width="50" height="50" /></li>
+       
+      <li style="color:white;"><?php echo $_SESSION['login'];?></li>
+      <li>
+      <a href="logout.php">Log Out
+    </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container" style="padding-top: 35px;">
+    <div class="row">
+            <div class="col-md-12">
+                <h1>Contact Me</h1>
+                <hr>
+                <form>
+                <div class="form-group">
+                    <label name="email">Email:</label>
+                    <input type="email" id="email" name ="email" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label name="email">Subject:</label>
+                    <input id="subject" name ="subject" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label name="email">Message:</label>
+                    <textarea id="message" name ="message" class="form-control" required="required">Type your message.....</textarea>
+                </div>
+                <input type="submit" value="Send Message" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+  </div>
+<div class="modal fade modal" id="sugmodal" role="dialog">
+<div class="modal-dialog modal-md modal-sm modal-lg moodal-xs">
+<!-- Modal content-->
+<div class="modal-content">
+<!--modal header-->
+<div class="modal-header" style="padding:25px 25px;">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Give Your Suggestion!!</h4>
+</div>
+<!--modal header ends-->
+<!--modal body starts-->
+<div class="modal-body" style="padding:40px 50px;">
+<form role="form" method="post" action="suggestion.php" enctype="multipart/form-data">
+<!--name-->
+<div class="form-group" align="left">
+<label for="name">
+    <span class="glyphicon glyphicon-user"></span>
+    Your Name
+</label>
+<input type="text" class="form-control" name="yname" id="name" placeholder="Enter your name" required="required">
+</div>
+<!--suggestion-->
+<div class="form-group" align="left">
+<label for="suggest"><span class="glyphicon glyphicon-comment"></span>
+&nbsp;Suggestion
+</label>
+<textarea class="form-control" name="suggestion" rows="6" id="suggest" placeholder="Max length 500 characters" required="required" ></textarea>
+</div>
+<!--contact-->
+<div class="form-group" align="left">
+<label for="conta">
+<span class="glyphicon glyphicon-phone"></span>
+Your Contact
+</label>
+<input type="text" class="form-control" name="contact" id="conta" placeholder="Enter your contact/FB profile link/Email" required="required">
+</div>
+<div class="modal-footer">
+<button type="submit" name="adsug" onclick="call();" class="btn btn-success btn-default pull-right">
+<span class="glyphicon glyphicon-flag"></span>
+Submit
+</button>
+<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+<span class="glyphicon glyphicon-remove"></span>
+Cancel
+</button>
+</form>
+</div>
+</div>
+<!--modal body ends-->
+</div>
+</div>
+<script>
+  function call(){
+    
+    alert('Thank you for your Suggestion!!');
+  }
+</script>
+  </body>
+  </html>
+
+  
